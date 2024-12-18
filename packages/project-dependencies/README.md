@@ -31,7 +31,7 @@ projects: [
   ],
 ```
 
-Even if `setup` project fails, Playwright correctly reports the results to the reporters, marking all the tests in the dependent projects as `skipped`.
+Even if `setup` project fails, Playwright correctly reports **all the results** to the reporters, marking all the tests in the dependent projects as `skipped`.
 
 ```sh
 npx playwright test
@@ -39,10 +39,6 @@ npx playwright test
 
 ![currents-2024-12-18-00 53 05@2x](https://github.com/user-attachments/assets/1e318bef-f2e1-4859-bcdd-b97a2d9f526e)
 
-
 ![currents-2024-12-18-00 52 10@2x](https://github.com/user-attachments/assets/c0f0d5fc-20cf-4ba0-a92e-93ca08392e82)
-
-
-Also, we get all the results reporter to Currents:
 
 ![currents-2024-12-18-00 54 33@2x](https://github.com/user-attachments/assets/f811c835-7240-4511-8d58-e34d410cfcc5)
