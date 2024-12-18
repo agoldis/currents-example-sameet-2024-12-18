@@ -62,4 +62,4 @@ For multi-shard runs, `globalSetup` can succeed on some shards and fail on other
 - Successful shards will scan and report the list of tests that are supposed to be reported, but will only run as subset of tests allocated for the shar
 - Failed shards will never run the tests
 
-As a result, Currents will mark the associated run as timedout because some tests were never reported.
+As a result, Currents marks the associated run as timedout because some tests were never reported.
