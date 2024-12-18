@@ -33,7 +33,10 @@ sequenceDiagram
     PW->>User: Done
 ```
 
-The example in this repo has Currents and the default `html` reporter configured: `reporter: [currentsReporter(currentsConfig), ["html"]]`:
+The example in thisrepo:
+
+- has `global-setup.ts` that always throws
+- has Currents and the default `html` reporter configured: `reporter: [currentsReporter(currentsConfig), ["html"]]`
 
 - Playwright doesn't report any tests - only the global error.
 - Currents (and other reporters) get no test results.
@@ -45,7 +48,5 @@ npx playwright test
 ![currents-2024-12-18-00 34 09@2x](https://github.com/user-attachments/assets/ecb917e1-e838-40bf-a7e6-5f9957dd58cb)
 
 ![currents-2024-12-18-00 33 45@2x](https://github.com/user-attachments/assets/24a771ed-a300-45c0-b002-40a68aee26ab)
-
-
 
 For multi-shard setup, `globalSetup` can succeed on some shards and they will send the list of all the expected tests to Currents.
