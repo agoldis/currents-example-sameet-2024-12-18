@@ -55,4 +55,11 @@ npx playwright test
 
 ![currents-2024-12-18-00 33 45@2x](https://github.com/user-attachments/assets/24a771ed-a300-45c0-b002-40a68aee26ab)
 
-For multi-shard setup, `globalSetup` can succeed on some shards and they will send the list of all the expected tests to Currents.
+## Multi-shard Environments
+
+For multi-shard runs, `globalSetup` can succeed on some shards and fail on others.
+
+- Successful shards will scan and report the list of tests that are supposed to be reported, but will only run as subset of tests allocated for the shar
+- Failed shards will never run the tests
+
+As a result, Currents will mark the associated run as timedout because some tests were never reported.
