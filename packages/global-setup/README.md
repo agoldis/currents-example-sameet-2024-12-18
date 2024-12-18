@@ -1,5 +1,7 @@
 # Playwright Global Setup Failure
 
+## Exceptions in `globalSetup`
+
 An uncaught exception in `globalSetup` prevents Playwright from running the tests. Playwright stops the execution and never reports test results to **any** of its reporters (including Currents).
 
 A normal case when `globalSetup` is successful:
@@ -33,17 +35,21 @@ sequenceDiagram
     PW->>User: Done
 ```
 
-The example in thisrepo:
+## Example
 
-- has `global-setup.ts` that always throws
-- has Currents and the default `html` reporter configured: `reporter: [currentsReporter(currentsConfig), ["html"]]`
+This repo `packages/global-setup`:
 
-- Playwright doesn't report any tests - only the global error.
-- Currents (and other reporters) get no test results.
+- has [`global-setup.ts`](./global-setup.ts) that always throws
+- has Currents and the default `html` reporter [configured](./playwright.config.ts): `reporter: [currentsReporter(currentsConfig), ["html"]]`
+
+Running:
 
 ```sh
 npx playwright test
 ```
+
+- Playwright doesn't report any tests - only the global error.
+- Currents (and other reporters) get no test results.
 
 ![currents-2024-12-18-00 34 09@2x](https://github.com/user-attachments/assets/ecb917e1-e838-40bf-a7e6-5f9957dd58cb)
 
