@@ -3,7 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const currentsConfig: CurrentsConfig = {
   recordKey: "xxx",
-  projectId: "yyy",
+  projectId: "xxx",
 };
 
 const config = defineConfig({
